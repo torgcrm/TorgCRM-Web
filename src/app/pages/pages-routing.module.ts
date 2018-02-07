@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { PagesComponent } from './pages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import {CRMProjectsComponent} from "./projects/projects.component";
 
 const routes: Routes = [{
   path: '',
@@ -13,10 +14,9 @@ const routes: Routes = [{
       component: DashboardComponent,
     },
     {
-      path: '',
-      redirectTo: 'dashboard',
-      pathMatch: 'full',
-    },
+      path: 'settings/projects',
+      component: CRMProjectsComponent
+    }
   ],
 }];
 
