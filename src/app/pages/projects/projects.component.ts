@@ -11,23 +11,39 @@ import {LocalDataSource, Ng2SmartTableModule} from "ng2-smart-table";
 })
 export class CRMProjectsComponent implements OnInit {
   projectsSource: LocalDataSource = new LocalDataSource();
-  settings: {};
+  settings = {
+    add: {
+      addButtonContent: '<i class="nb-plus"></i>',
+      createButtonContent: '<i class="nb-checkmark"></i>',
+      cancelButtonContent: '<i class="nb-close"></i>',
+    },
+    edit: {
+      editButtonContent: '<i class="nb-edit"></i>',
+      saveButtonContent: '<i class="nb-checkmark"></i>',
+      cancelButtonContent: '<i class="nb-close"></i>',
+    },
+    delete: {
+      deleteButtonContent: '<i class="nb-trash"></i>',
+      confirmDelete: true,
+    },
+    columns: {
+      id: {
+        title: 'ID',
+        type: 'number',
+      },
+      domain: {
+        title: 'Domain',
+        type: 'string',
+      },
+      template: {
+        title: 'Template',
+        type: 'string',
+      }
+    },
+  };
 
   constructor(private projectService: CRMProjectsService) {
     this.projectService = projectService;
-    this.settings = {
-      columns: {
-        id: {
-          title: 'ID'
-        },
-        domain: {
-          title: 'Domain'
-        },
-        template: {
-          title: 'Template'
-        }
-      }
-    };
   }
 
   ngOnInit(): void {
