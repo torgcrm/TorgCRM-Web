@@ -19,14 +19,14 @@ export const MENU_ITEMS: NbMenuItem[] = [
       {
         title: 'Category',
         link: '/pages/catalog/category',
-        icon: 'nb-grid-a-outline'
+        icon: 'nb-grid-a-outline',
       },
       {
         title: 'Items',
         link: '/pages/catalog/items',
-        icon: 'nb-keypad'
+        icon: 'nb-keypad',
       },
-    ]
+    ],
   },
   {
     title: 'Menu',
@@ -50,9 +50,9 @@ export const MENU_ITEMS: NbMenuItem[] = [
       {
         title: 'Projects',
         link: '/pages/settings/projects',
-        icon: 'nb-layout-default'
-      }
-    ]
+        icon: 'nb-layout-default',
+      },
+    ],
   },
   {
     title: 'Auth',
