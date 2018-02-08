@@ -8,14 +8,49 @@ export const MENU_ITEMS: NbMenuItem[] = [
     home: true,
   },
   {
+    title: 'Orders',
+    icon: 'nb-compose',
+    link: '/pages/orders',
+  },
+  {
+    title: 'Catalog',
+    icon: 'nb-grid-b-outline',
+    children: [
+      {
+        title: 'Category',
+        link: '/pages/catalog/category',
+        icon: 'nb-grid-a-outline'
+      },
+      {
+        title: 'Items',
+        link: '/pages/catalog/items',
+        icon: 'nb-keypad'
+      },
+    ]
+  },
+  {
+    title: 'Menu',
+    icon: 'nb-list',
+    link: '/pages/menu',
+  },
+  {
+    title: 'Pages',
+    icon: 'nb-layout-default',
+    link: '/pages/pages',
+  },
+  {
+    title: 'News',
+    icon: 'ion-document',
+    link: '/pages/news',
+  },
+  {
     title: 'Settings',
-    icon: 'nb-settings',
-    link: '/pages/settings',
+    icon: 'nb-gear',
     children : [
       {
         title: 'Projects',
         link: '/pages/settings/projects',
-        icon: 'nb-project'
+        icon: 'nb-layout-default'
       }
     ]
   },
