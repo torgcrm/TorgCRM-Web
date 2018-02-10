@@ -1,12 +1,17 @@
 import {Injectable} from "@angular/core";
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpHeaders} from "@angular/common/http";
+import {Project} from "../domain/Project";
 
 @Injectable()
 export class CRMProjectsService {
-  private _url = "http://localhost:8080/api/admin/projects"
+  private _url = "http://localhost:8080/api/admin/projects";
   constructor(private _http: HttpClient) {}
 
   getProjects() {
-    return this._http.get<any>(this._url);
+    return this._http.get<Project>(this._url);
+  }
+
+  saveProject(project: Project) {
+    return this._http.post<Project>(this._url, project);
   }
 }

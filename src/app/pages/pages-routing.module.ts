@@ -1,9 +1,9 @@
-import { RouterModule, Routes } from '@angular/router';
-import { NgModule } from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
+import {NgModule} from '@angular/core';
 
-import { PagesComponent } from './pages.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import {CRMProjectsComponent} from "./projects/projects.component";
+import {PagesComponent} from './pages.component';
+import {DashboardComponent} from './dashboard/dashboard.component';
+import {CRMSettingsRoutingModule} from "./settings/settings-routing.module";
 
 const routes: Routes = [{
   path: '',
@@ -13,15 +13,14 @@ const routes: Routes = [{
       path: 'dashboard',
       component: DashboardComponent,
     },
-    {
-      path: 'settings/projects',
-      component: CRMProjectsComponent
-    }
   ],
 }];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
+  imports: [
+    RouterModule.forChild(routes),
+    CRMSettingsRoutingModule
+  ],
   exports: [RouterModule],
 })
 export class PagesRoutingModule {
