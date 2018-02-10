@@ -4,11 +4,13 @@ import {ThemeModule} from '../../../@theme/theme.module';
 import {CRMProjectsComponent} from './projects.component';
 import {Ng2SmartTableModule} from 'ng2-smart-table';
 import {CRMProjectDetailsComponent} from "./project-details.component";
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   imports: [
     ThemeModule,
-    Ng2SmartTableModule
+    Ng2SmartTableModule,
+    FormsModule,
   ],
   declarations: [
     CRMProjectsComponent,
