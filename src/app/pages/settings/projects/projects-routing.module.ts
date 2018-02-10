@@ -16,6 +16,10 @@ const projectRoutes: Routes = [{
       path: 'settings/projects/details/:id',
       component: CRMProjectDetailsComponent,
     },
+    {
+      path: 'settings/projects/new',
+      component: CRMProjectDetailsComponent,
+    },
   ],
 }];
 

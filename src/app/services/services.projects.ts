@@ -1,23 +1,33 @@
 import {Injectable} from "@angular/core";
-import {HttpClient, HttpHeaders} from "@angular/common/http";
+import {HttpClient} from "@angular/common/http";
 import {Project} from "../domain/Project";
 
 @Injectable()
 export class CRMProjectsService {
   private _url = "http://localhost:8080/api/admin/projects";
-  private _urlDetails = "http://localhost:8080/api/admin/projects/details/";
 
-  constructor(private _http: HttpClient) {}
+  constructor(private _http: HttpClient) {
+  }
 
   getProjects() {
-    return this._http.get<Project>(this._url);
+    return this._http.get(this._url);
+  }
+
+  updateProject(project: Project) {
+    return this._http.post(this._url, project);
   }
 
   saveProject(project: Project) {
-    return this._http.post<Project>(this._url, project);
+    return this._http.put(this._url, project);
+  }
+
+  deleteProject(projectId: number) {
+    const deleteUrl = `${this._url}/${projectId}`;
+    return this._http.delete(deleteUrl);
   }
 
   getProjectById(projectId: number) {
-    return this._http.get<Project>(this._urlDetails + projectId);
+    const url = `${this._url}/details/${projectId}`;
+    return this._http.get(url);
   }
 }

@@ -1,5 +1,6 @@
 <ng2-smart-table [settings]="settings" [source]="projectsSource"
-                 (edit)="onRowSelect($event)"
-                 (delete)="onDeleteConfirm($event)"
-                 (userRowSelect)="onRowSelect($event)" >
+                 (edit)="onEdit($event)"
+                 (delete)="onDelete($event)"
+                 (create)="onCreate($event)"
+                 (userRowSelect)="onEdit($event)" >
 </ng2-smart-table>

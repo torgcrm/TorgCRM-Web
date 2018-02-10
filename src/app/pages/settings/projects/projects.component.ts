@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core'
 import {CRMProjectsService} from "../../../services/services.projects";
 import {LocalDataSource} from "ng2-smart-table";
 import {Router} from "@angular/router";
+import {Project} from "../../../domain/Project";
 
 @Component({
   selector: 'crm-projects',
@@ -50,24 +51,23 @@ export class CRMProjectsComponent implements OnInit {
     this.projectService = projectService;
   }
 
+  onDelete(event): void {
+    this.projectService.deleteProject(event.data.id).subscribe(data => {
+      this.projectsSource.remove(event.data);
+    });
+  }
+
   onEdit(event):void {
-    // this.projectService.saveProject(event.newData).subscribe(data => {
-    //   this.projectsSource.update(event.data, data);
-    // });
-    // this.projectsSource.refresh();
+    const id = event.data.id;
+    this.router.navigate(['pages/settings/projects/details', id])
   }
 
-  onDeleteConfirm(event): void {
-    alert(1);
-  }
-
-  onRowSelect(event):void {
-    this.router.navigate(['pages/settings/projects/details', event.data.id])
+  onCreate(event): void {
+    this.router.navigate(['pages/settings/projects/new']);
   }
 
   ngOnInit(): void {
-    this.projectService.getProjects()
-      .subscribe(data => this.projectsSource.load(data));
+    this.projectService.getProjects().subscribe((data: Array<Project>) => this.projectsSource.load(data));
   }
 
 }

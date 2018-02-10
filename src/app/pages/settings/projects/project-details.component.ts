@@ -15,14 +15,22 @@ export class CRMProjectDetailsComponent implements OnInit {
   public projectId: any;
   private project: Project = new Project();
 
-  constructor(private activaedRoute: ActivatedRoute,
+  constructor(private activatedRoute: ActivatedRoute,
               private router: Router,
-              private projectService: CRMProjectsService) {}
+              private projectService: CRMProjectsService) {
+  }
 
   onSubmit(form): void {
-    this.projectService.saveProject(form).subscribe(data => {
-      this.navigateToProjects();
-    });
+    this.projectId = this.activatedRoute.snapshot.paramMap.get("id");
+    if (this.projectId) {
+      this.projectService.updateProject(form).subscribe(data => {
+        this.navigateToProjects();
+      });
+    } else {
+      this.projectService.saveProject(form).subscribe(data => {
+        this.navigateToProjects();
+      })
+    }
   }
 
   goToProjects(event): void {
@@ -34,9 +42,11 @@ export class CRMProjectDetailsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.projectId = this.activaedRoute.snapshot.paramMap.get("id");
-    this.projectService.getProjectById(this.projectId).subscribe(data => {
-      this.project = data;
-    })
+    this.projectId = this.activatedRoute.snapshot.paramMap.get("id");
+    if (this.projectId) {
+      this.projectService.getProjectById(this.projectId).subscribe((project: Project) => {
+        this.project = project;
+      });
+    }
   }
 }
