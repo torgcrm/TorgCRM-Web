@@ -24,6 +24,6 @@ const menuRoutes: Routes = [{
 
 @NgModule({
   imports: [RouterModule.forChild(menuRoutes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class CRMMenuRoutingModule {}

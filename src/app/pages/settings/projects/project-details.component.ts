@@ -7,9 +7,6 @@ import {Project} from "../../../domain/Project";
   selector: 'crm-project-details',
   templateUrl: './project-details.component.html',
   styleUrls: ['./project-details.component.scss'],
-  providers: [
-    CRMProjectsService
-  ]
 })
 export class CRMProjectDetailsComponent implements OnInit {
   public projectId: any;
@@ -44,8 +41,8 @@ export class CRMProjectDetailsComponent implements OnInit {
   ngOnInit(): void {
     this.projectId = this.activatedRoute.snapshot.paramMap.get("id");
     if (this.projectId) {
-      this.projectService.getById(this.projectId).subscribe((project: Project) => {
-        this.project = project;
+      this.projectService.getById(this.projectId).subscribe((data: Project) => {
+        this.project = data;
       });
     }
   }

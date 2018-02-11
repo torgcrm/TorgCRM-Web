@@ -7,9 +7,6 @@ import {Project} from "../../../domain/Project";
 @Component({
   selector: 'crm-projects',
   templateUrl: './projects.component.html',
-  providers: [
-    CRMProjectsService
-  ]
 })
 export class CRMProjectsComponent implements OnInit {
   projectsSource: LocalDataSource = new LocalDataSource();
@@ -67,7 +64,7 @@ export class CRMProjectsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.projectService.getAll().subscribe((data: Array<Project>) => this.projectsSource.load(data));
+    this.projectService.getAll().subscribe((data:Array<Project>) => this.projectsSource.load(data));
   }
 
 }

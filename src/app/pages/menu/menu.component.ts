@@ -6,7 +6,6 @@ import {Menu} from "../../domain/Menu";
 @Component({
   templateUrl: 'menu.component.html',
   styleUrls: ['menu.component.scss'],
-  providers: [CRMMenuService]
 })
 export class CRMMenuComponent implements OnInit {
   private menuDataSource: LocalDataSource = new LocalDataSource();
@@ -46,8 +45,8 @@ export class CRMMenuComponent implements OnInit {
   constructor(private _menuService: CRMMenuService) {}
 
   ngOnInit() {
-    this._menuService.getAll().subscribe((menu: Array<Menu>) => {
-      this.menuDataSource.load(menu);
+    this._menuService.getAll().subscribe((data: Array<Menu>) => {
+      this.menuDataSource.load(data);
     })
   }
 }
