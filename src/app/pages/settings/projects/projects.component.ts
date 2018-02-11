@@ -52,7 +52,7 @@ export class CRMProjectsComponent implements OnInit {
   }
 
   onDelete(event): void {
-    this.projectService.deleteProject(event.data.id).subscribe(data => {
+    this.projectService.delete(event.data.id).subscribe(data => {
       this.projectsSource.remove(event.data);
     });
   }
@@ -67,7 +67,7 @@ export class CRMProjectsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.projectService.getProjects().subscribe((data: Array<Project>) => this.projectsSource.load(data));
+    this.projectService.getAll().subscribe((data: Array<Project>) => this.projectsSource.load(data));
   }
 
 }

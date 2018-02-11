@@ -4,6 +4,7 @@ import {NgModule} from '@angular/core';
 import {PagesComponent} from './pages.component';
 import {DashboardComponent} from './dashboard/dashboard.component';
 import {CRMSettingsRoutingModule} from "./settings/settings-routing.module";
+import {CRMMenuRoutingModule} from "./menu/menu-routing.module";
 
 const routes: Routes = [{
   path: '',
@@ -19,7 +20,8 @@ const routes: Routes = [{
 @NgModule({
   imports: [
     RouterModule.forChild(routes),
-    CRMSettingsRoutingModule
+    CRMSettingsRoutingModule,
+    CRMMenuRoutingModule,
   ],
   exports: [RouterModule],
 })

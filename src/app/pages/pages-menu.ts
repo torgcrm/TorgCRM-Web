@@ -50,7 +50,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
       {
         title: 'Projects',
         link: '/pages/settings/projects',
-        icon: 'nb-layout-default',
+        icon: 'ion-clipboard',
       },
     ],
   },

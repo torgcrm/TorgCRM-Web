@@ -23,11 +23,11 @@ export class CRMProjectDetailsComponent implements OnInit {
   onSubmit(form): void {
     this.projectId = this.activatedRoute.snapshot.paramMap.get("id");
     if (this.projectId) {
-      this.projectService.updateProject(form).subscribe(data => {
+      this.projectService.update(form).subscribe(data => {
         this.navigateToProjects();
       });
     } else {
-      this.projectService.saveProject(form).subscribe(data => {
+      this.projectService.create(form).subscribe(data => {
         this.navigateToProjects();
       })
     }
@@ -44,7 +44,7 @@ export class CRMProjectDetailsComponent implements OnInit {
   ngOnInit(): void {
     this.projectId = this.activatedRoute.snapshot.paramMap.get("id");
     if (this.projectId) {
-      this.projectService.getProjectById(this.projectId).subscribe((project: Project) => {
+      this.projectService.getById(this.projectId).subscribe((project: Project) => {
         this.project = project;
       });
     }
