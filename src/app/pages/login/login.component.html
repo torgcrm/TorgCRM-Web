@@ -1,0 +1,24 @@
+<h2 class="title">Sign in</h2>
+<small class="form-text sub-title">Hello! Sign in with your username or email</small>
+<div>
+  <form #f="ngForm" (ngSubmit)="onSubmit(f.value)">
+    <div class="form-group">
+      <label for="input-email" class="sr-only">Email address</label>
+      <input name="email" id="input-email" pattern=".+@.+\..+" [ngModel]="user.email"
+             class="form-control" placeholder="Email address" autofocus>
+    </div>
+    <div class="form-group">
+      <label for="input-password" class="sr-only">Password</label>
+      <input name="password"  type="password" id="input-password"
+             [ngModel]="user.password"
+             class="form-control" placeholder="Password">
+    </div>
+    <div class="form-group accept-group col-sm-12">
+      <nb-checkbox name="rememberMe" [ngModel]="user.rememberMe" >Remember me</nb-checkbox>
+      <a class="forgot-password" routerLink="../request-password">Forgot Password?</a>
+    </div>
+    <button class="btn btn-block btn-hero-success" >
+      Sign In
+    </button>
+  </form>
+</div>

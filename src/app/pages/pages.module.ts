@@ -6,6 +6,9 @@ import { PagesRoutingModule } from './pages-routing.module';
 import { ThemeModule } from '../@theme/theme.module';
 import {CRMSettingsModule} from "./settings/settings.module";
 import {CRMMenuModule} from "./menu/menu.module";
+import {CRMLoginModule} from "./login/login.module";
+import {JwtInterceptor} from "../interceptors/JwtInterceptor";
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 
 const PAGES_COMPONENTS = [
   PagesComponent,
@@ -13,15 +16,22 @@ const PAGES_COMPONENTS = [
 
 @NgModule({
   imports: [
+    HttpClientModule,
     PagesRoutingModule,
     ThemeModule,
     DashboardModule,
     CRMSettingsModule,
     CRMMenuModule,
+    CRMLoginModule,
   ],
   declarations: [
     ...PAGES_COMPONENTS,
   ],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true
+    }
+  ]
 })
 export class PagesModule {
 }
