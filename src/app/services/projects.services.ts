@@ -1,6 +1,6 @@
 import {Injectable} from "@angular/core";
-import {CRMBasicService} from "./services.basic";
 import {HttpClient} from "@angular/common/http";
+import {CRMBasicService} from "../@torgcrm/services/CRMBasicService";
 
 @Injectable()
 export class CRMProjectsService extends CRMBasicService {

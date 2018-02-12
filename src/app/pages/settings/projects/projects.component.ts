@@ -1,15 +1,16 @@
 import {Component, OnInit} from '@angular/core'
-import {CRMProjectsService} from "../../../services/services.projects";
+import {CRMProjectsService} from "../../../services/projects.services";
 import {LocalDataSource} from "ng2-smart-table";
 import {Router} from "@angular/router";
 import {Project} from "../../../domain/Project";
+import {CRMObjectList} from "../../../@torgcrm/components/CRMObjectList";
 
 @Component({
   selector: 'crm-projects',
   templateUrl: './projects.component.html',
 })
-export class CRMProjectsComponent implements OnInit {
-  projectsSource: LocalDataSource = new LocalDataSource();
+export class CRMProjectsComponent implements OnInit, CRMObjectList {
+  dataSource: LocalDataSource = new LocalDataSource();
   settings = {
     mode: 'external',
     add: {
@@ -50,11 +51,11 @@ export class CRMProjectsComponent implements OnInit {
 
   onDelete(event): void {
     this.projectService.delete(event.data.id).subscribe(data => {
-      this.projectsSource.remove(event.data);
+      this.dataSource.remove(event.data);
     });
   }
 
-  onEdit(event):void {
+  onEdit(event): void {
     const id = event.data.id;
     this.router.navigate(['pages/settings/projects/details', id])
   }
@@ -64,7 +65,7 @@ export class CRMProjectsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.projectService.getAll().subscribe((data:Array<Project>) => this.projectsSource.load(data));
+    this.projectService.getAll().subscribe((data: Array<Project>) => this.dataSource.load(data));
   }
 
 }

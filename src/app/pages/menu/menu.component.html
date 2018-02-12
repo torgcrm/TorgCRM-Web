@@ -1,1 +1,6 @@
-<ng2-smart-table [settings]="settings" [source]="menuDataSource"></ng2-smart-table>
+<ng2-smart-table [settings]="settings" [source]="dataSource"
+                 (edit)="onEdit($event)"
+                 (delete)="onDelete($event)"
+                 (create)="onCreate($event)"
+                 (userRowSelect)="onEdit($event)" >
+</ng2-smart-table>

@@ -2,6 +2,7 @@ import {RouterModule, Routes} from "@angular/router";
 import {PagesComponent} from "../pages.component";
 import {CRMMenuComponent} from "./menu.component";
 import {NgModule} from "@angular/core";
+import {CRMMenuDetailsComponent} from "./menu-details.component";
 
 const menuRoutes: Routes = [{
   path: '',
@@ -13,11 +14,11 @@ const menuRoutes: Routes = [{
     },
     {
       path: 'menu/new',
-      component: CRMMenuComponent,
+      component: CRMMenuDetailsComponent,
     },
     {
       path: 'menu/details/:id',
-      component: CRMMenuComponent,
+      component: CRMMenuDetailsComponent,
     },
   ],
 }];

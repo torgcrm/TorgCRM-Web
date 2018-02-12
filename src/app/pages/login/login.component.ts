@@ -1,6 +1,6 @@
 import {Component} from "@angular/core";
 import {User} from "../../domain/User";
-import {CRMLoginService} from "../../services/services.login";
+import {CRMLoginService} from "../../services/login.services";
 import {Router} from "@angular/router";
 
 @Component({
@@ -11,7 +11,8 @@ export class CRMLoginComponent {
   private user: User = new User();
 
   constructor(private loginService: CRMLoginService,
-              private router: Router) {}
+              private router: Router) {
+  }
 
   onSubmit(user) {
     this.loginService.authorize(user).subscribe(data => {

@@ -1,15 +1,17 @@
 import {Component, OnInit} from "@angular/core";
 import {LocalDataSource} from "ng2-smart-table";
-import {CRMMenuService} from "../../services/services.menu";
+import {CRMMenuService} from "../../services/menu.services";
 import {Menu} from "../../domain/Menu";
+import {Router} from "@angular/router";
+import {CRMObjectList} from "../../@torgcrm/components/CRMObjectList";
 
 @Component({
   templateUrl: 'menu.component.html',
   styleUrls: ['menu.component.scss'],
 })
-export class CRMMenuComponent implements OnInit {
-  private menuDataSource: LocalDataSource = new LocalDataSource();
-  private settings = {
+export class CRMMenuComponent implements OnInit, CRMObjectList {
+  dataSource: LocalDataSource = new LocalDataSource();
+  settings = {
     mode: 'external',
     add: {
       addButtonContent: '<i class="nb-plus"></i>',
@@ -31,8 +33,8 @@ export class CRMMenuComponent implements OnInit {
       columnTitle: 'Actions'
     },
     columns: {
-      menu: {
-        title: 'Menu',
+      title: {
+        title: 'Title',
         type: 'string',
       },
       code: {
@@ -42,11 +44,29 @@ export class CRMMenuComponent implements OnInit {
     },
   };
 
-  constructor(private _menuService: CRMMenuService) {}
+  constructor(private menuService: CRMMenuService,
+              private router: Router) {
+  }
 
   ngOnInit() {
-    this._menuService.getAll().subscribe((data: Array<Menu>) => {
-      this.menuDataSource.load(data);
+    this.menuService.getAll().subscribe((data: Array<Menu>) => {
+      this.dataSource.load(data);
     })
   }
+
+  onDelete(event): void {
+    this.menuService.delete(event.data.id).subscribe(data => {
+      this.dataSource.remove(event.data);
+    });
+  }
+
+  onEdit(event): void {
+    const id = event.data.id;
+    this.router.navigate(['pages/menu/details', id])
+  }
+
+  onCreate(event): void {
+    this.router.navigate(['pages/menu/new']);
+  }
+
 }

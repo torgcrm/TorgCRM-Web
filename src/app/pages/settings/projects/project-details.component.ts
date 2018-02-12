@@ -1,16 +1,17 @@
 import {Component, OnInit} from '@angular/core'
-import {CRMProjectsService} from "../../../services/services.projects";
+import {CRMProjectsService} from "../../../services/projects.services";
 import {ActivatedRoute, Router} from "@angular/router";
 import {Project} from "../../../domain/Project";
+import {CRMFormDetails} from "../../../@torgcrm/components/CRMFormDetails";
 
 @Component({
   selector: 'crm-project-details',
   templateUrl: './project-details.component.html',
   styleUrls: ['./project-details.component.scss'],
 })
-export class CRMProjectDetailsComponent implements OnInit {
-  public projectId: any;
-  private project: Project = new Project();
+export class CRMProjectDetailsComponent implements OnInit, CRMFormDetails {
+  objectId: any;
+  object: Project = new Project();
 
   constructor(private activatedRoute: ActivatedRoute,
               private router: Router,
@@ -18,31 +19,31 @@ export class CRMProjectDetailsComponent implements OnInit {
   }
 
   onSubmit(form): void {
-    this.projectId = this.activatedRoute.snapshot.paramMap.get("id");
-    if (this.projectId) {
+    this.objectId = this.activatedRoute.snapshot.paramMap.get("id");
+    if (this.objectId) {
       this.projectService.update(form).subscribe(data => {
-        this.navigateToProjects();
+        this.navigateToList();
       });
     } else {
       this.projectService.create(form).subscribe(data => {
-        this.navigateToProjects();
+        this.navigateToList();
       })
     }
   }
 
-  goToProjects(event): void {
-    this.navigateToProjects();
+  onCancel(event): void {
+    this.navigateToList();
   }
 
-  private navigateToProjects(): void {
+  navigateToList(): void {
     this.router.navigate(['pages/settings/projects']);
   }
 
   ngOnInit(): void {
-    this.projectId = this.activatedRoute.snapshot.paramMap.get("id");
-    if (this.projectId) {
-      this.projectService.getById(this.projectId).subscribe((data: Project) => {
-        this.project = data;
+    this.objectId = this.activatedRoute.snapshot.paramMap.get("id");
+    if (this.objectId) {
+      this.projectService.getById(this.objectId).subscribe((data: Project) => {
+        this.object = data;
       });
     }
   }
