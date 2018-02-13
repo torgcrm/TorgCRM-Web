@@ -7,6 +7,7 @@ import {CRMSettingsRoutingModule} from './settings/settings-routing.module';
 import {CRMMenuRoutingModule} from './menu/menu-routing.module';
 import {CRMNewsRoutingModule} from './news/news-routing.module';
 import {CRMPagesRoutingModule} from './pages/pages-routing.module';
+import {CRMCategoriesRoutingModule} from './catalog/categories/categories-routing.module';
 
 const routes: Routes = [{
   path: '',
@@ -26,6 +27,7 @@ const routes: Routes = [{
     CRMMenuRoutingModule,
     CRMNewsRoutingModule,
     CRMPagesRoutingModule,
+    CRMCategoriesRoutingModule,
   ],
   exports: [RouterModule],
 })

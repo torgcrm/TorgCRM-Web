@@ -11,6 +11,7 @@ import {JwtInterceptor} from '../interceptors/JwtInterceptor';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {CRMNewsModule} from './news/news.module';
 import {CRMPagesModule} from './pages/pages.module';
+import {CRMCategoriesModule} from './catalog/categories/categories.module';
 
 const PAGES_COMPONENTS = [
   PagesComponent,
@@ -27,6 +28,7 @@ const PAGES_COMPONENTS = [
     CRMLoginModule,
     CRMNewsModule,
     CRMPagesModule,
+    CRMCategoriesModule,
   ],
   declarations: [
     ...PAGES_COMPONENTS,

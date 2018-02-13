@@ -1,10 +1,10 @@
 import {NgModule} from '@angular/core';
 import {Ng2SmartTableModule} from 'ng2-smart-table';
-import {ThemeModule} from '../../@theme/theme.module';
+import {ThemeModule} from '../../../@theme/theme.module';
 import {CKEditorModule} from 'ng2-ckeditor';
-import {CRMPagesService} from '../../services/pages.service';
-import {CRMCategoriesComponent} from './pages.component';
-import {CRMCategoriesDetailsComponent} from './pages-details.component';
+import {CRMCategoriesComponent} from './categories.component';
+import {CRMCategoriesDetailsComponent} from './categories-details.component';
+import {CRMCategoryService} from '../../../services/category.service';
 
 @NgModule({
   imports: [
@@ -17,7 +17,7 @@ import {CRMCategoriesDetailsComponent} from './pages-details.component';
     CRMCategoriesDetailsComponent,
   ],
   providers: [
-    CRMPagesService,
+    CRMCategoryService,
   ],
 })
 export class CRMCategoriesModule {}

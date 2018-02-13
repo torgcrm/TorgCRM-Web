@@ -33,7 +33,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
       },
       {
         title: 'Category',
-        link: '/pages/catalog/category',
+        link: '/pages/catalog/categories',
         icon: 'nb-grid-a-outline',
       },
     ],

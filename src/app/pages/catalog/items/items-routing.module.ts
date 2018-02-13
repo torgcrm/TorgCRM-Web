@@ -1,23 +1,23 @@
 import {RouterModule, Routes} from '@angular/router';
-import {PagesComponent} from '../pages.component';
+import {PagesComponent} from '../../pages.component';
 import {NgModule} from '@angular/core';
-import {CRMCategoriesComponent} from './pages.component';
-import {CRMCategoriesDetailsComponent} from './pages-details.component';
+import {CRMCategoriesComponent} from './items.component';
+import {CRMCategoriesDetailsComponent} from './items-details.component';
 
 const routes: Routes = [{
   path: '',
   component: PagesComponent,
   children: [
     {
-      path: 'pages',
+      path: 'catalog/categories',
       component: CRMCategoriesComponent,
     },
     {
-      path: 'pages/new',
+      path: 'catalog/categories/new',
       component: CRMCategoriesDetailsComponent,
     },
     {
-      path: 'pages/details/:id',
+      path: 'catalog/categories/details/:id',
       component: CRMCategoriesDetailsComponent,
     },
   ],

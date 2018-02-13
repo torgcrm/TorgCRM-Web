@@ -1,14 +1,14 @@
-import {CRMObjectList} from '../../@torgcrm/components/CRMObjectList';
+import {CRMObjectList} from '../../../@torgcrm/components/CRMObjectList';
 import {LocalDataSource} from 'ng2-smart-table';
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
-import {News} from '../../domain/News';
-import {CRMPagesService} from '../../services/pages.service';
+import {News} from '../../../domain/News';
+import {CRMCategoryService} from '../../../services/category.service';
 
 @Component({
-  templateUrl: 'pages.component.html',
+  templateUrl: 'categories.component.html',
   styleUrls: [
-    'pages.component.scss',
+    'categories.component.scss',
   ],
 })
 export class CRMCategoriesComponent implements CRMObjectList, OnInit {
@@ -36,17 +36,17 @@ export class CRMCategoriesComponent implements CRMObjectList, OnInit {
     },
     columns: {
       title: {
-        title: 'Title',
+        title: 'Category name',
         type: 'string',
       },
-      description: {
-        title: 'Description',
+      slug: {
+        title: 'Code',
         type: 'string',
       },
     },
   };
 
-  constructor(private service: CRMPagesService,
+  constructor(private service: CRMCategoryService,
               private router: Router) {
   }
 
@@ -64,11 +64,11 @@ export class CRMCategoriesComponent implements CRMObjectList, OnInit {
 
   onEdit(event): void {
     const id = event.data.id;
-    this.router.navigate(['pages/pages/details', id])
+    this.router.navigate(['pages/catalog/categories/details', id])
   }
 
   onCreate(event): void {
-    this.router.navigate(['pages/pages/new']);
+    this.router.navigate(['pages/catalog/categories/new']);
   }
 
 }

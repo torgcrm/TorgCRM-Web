@@ -1,22 +1,23 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
-import {CRMFormDetails} from '../../@torgcrm/components/CRMFormDetails';
-import {News} from '../../domain/News';
+import {CRMFormDetails} from '../../../@torgcrm/components/CRMFormDetails';
+import {News} from '../../../domain/News';
 import '../loaders/ckeditor.loader'
 import 'ckeditor';
-import {CRMPagesService} from '../../services/pages.service';
+import {Category} from '../../../domain/Category';
+import {CRMCategoryService} from '../../../services/category.service';
 
 @Component({
-  templateUrl: 'pages-details.component.html',
-  styleUrls: ['pages-details.component.scss'],
+  templateUrl: 'categories-details.component.html',
+  styleUrls: ['categories-details.component.scss'],
 })
 export class CRMCategoriesDetailsComponent implements OnInit, CRMFormDetails {
   objectId: any;
-  object: News = new News();
+  object: Category = new Category();
 
   constructor(private router: Router,
               private activatedRoute: ActivatedRoute,
-              private service: CRMPagesService) {
+              private service: CRMCategoryService) {
   }
 
   onCancel(event): void {
@@ -38,7 +39,7 @@ export class CRMCategoriesDetailsComponent implements OnInit, CRMFormDetails {
   }
 
   navigateToList(): void {
-    this.router.navigate(['pages/pages']);
+    this.router.navigate(['pages/catalog/categories']);
   }
 
   ngOnInit() {
