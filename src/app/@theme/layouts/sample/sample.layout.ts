@@ -16,12 +16,12 @@ import 'rxjs/add/operator/delay';
 
 // TODO: move layouts into the framework
 @Component({
-  selector: 'ngx-sample-layout',
+  selector: 'crm-sample-layout',
   styleUrls: ['./sample.layout.scss'],
   template: `
     <nb-layout [center]="layout.id === 'center-column'" windowMode>
       <nb-layout-header fixed>
-        <ngx-header [position]="sidebar.id === 'left' ? 'normal': 'inverse'"></ngx-header>
+        <crm-header [position]="sidebar.id === 'left' ? 'normal': 'inverse'"></crm-header>
       </nb-layout-header>
 
       <nb-sidebar class="menu-sidebar"
@@ -52,7 +52,7 @@ import 'rxjs/add/operator/delay';
                    state="collapsed"
                    fixed
                    [right]="sidebar.id !== 'right'">
-        <ngx-theme-settings></ngx-theme-settings>
+        <crm-theme-settings></crm-theme-settings>
       </nb-sidebar>
     </nb-layout>
   `,

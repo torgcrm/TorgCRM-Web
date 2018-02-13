@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
-import {CRMProjectsModule} from "./projects/projects.module";
+import {CRMProjectsModule} from './projects/projects.module';
 
 
 @NgModule({
   imports: [
-    CRMProjectsModule
+    CRMProjectsModule,
   ],
 })
 export class CRMSettingsModule { }

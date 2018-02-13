@@ -2,10 +2,10 @@ import {NgModule} from '@angular/core';
 
 import {ThemeModule} from '../../@theme/theme.module';
 import {DashboardComponent} from './dashboard.component';
-import {NgxChartsModule} from "@swimlane/ngx-charts";
-import {NgxEchartsModule} from "ngx-echarts";
-import {EchartsBarComponent} from "./echarts-bar.component";
-import {EchartsPieComponent} from "./echarts-pie.component";
+import {NgxChartsModule} from '@swimlane/ngx-charts';
+import {NgxEchartsModule} from 'ngx-echarts';
+import {EchartsBarComponent} from './echarts-bar.component';
+import {EchartsPieComponent} from './echarts-pie.component';
 
 
 @NgModule({
@@ -17,7 +17,7 @@ import {EchartsPieComponent} from "./echarts-pie.component";
   declarations: [
     DashboardComponent,
     EchartsBarComponent,
-    EchartsPieComponent
+    EchartsPieComponent,
   ],
 })
 export class DashboardModule {

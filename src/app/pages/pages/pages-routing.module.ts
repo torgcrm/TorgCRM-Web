@@ -1,8 +1,8 @@
-import {RouterModule, Routes} from "@angular/router";
-import {PagesComponent} from "../pages.component";
-import {NgModule} from "@angular/core";
-import {CRMPagesComponent} from "./pages.component";
-import {CRMPagesDetailsComponent} from "./pages-details.component";
+import {RouterModule, Routes} from '@angular/router';
+import {PagesComponent} from '../pages.component';
+import {NgModule} from '@angular/core';
+import {CRMPagesComponent} from './pages.component';
+import {CRMPagesDetailsComponent} from './pages-details.component';
 
 const routes: Routes = [{
   path: '',

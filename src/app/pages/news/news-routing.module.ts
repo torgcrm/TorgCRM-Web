@@ -1,8 +1,8 @@
-import {RouterModule, Routes} from "@angular/router";
-import {PagesComponent} from "../pages.component";
-import {NgModule} from "@angular/core";
-import {CRMNewsComponent} from "./news.component";
-import {CRMNewsDetailsComponent} from "./news-details.component";
+import {RouterModule, Routes} from '@angular/router';
+import {PagesComponent} from '../pages.component';
+import {NgModule} from '@angular/core';
+import {CRMNewsComponent} from './news.component';
+import {CRMNewsDetailsComponent} from './news-details.component';
 
 const routes: Routes = [{
   path: '',

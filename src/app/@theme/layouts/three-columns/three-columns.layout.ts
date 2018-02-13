@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 // TODO: move layouts into the framework
 @Component({
-  selector: 'ngx-three-columns-layout',
+  selector: 'crm-three-columns-layout',
   styleUrls: ['./three-columns.layout.scss'],
   template: `
     <nb-layout>

@@ -1,10 +1,10 @@
-import {Injectable} from "@angular/core";
-import {User} from "../domain/User";
-import {HttpClient} from "@angular/common/http";
+import {Injectable} from '@angular/core';
+import {User} from '../domain/User';
+import {HttpClient} from '@angular/common/http';
 
 @Injectable()
 export class CRMLoginService {
-  private _url:string = "http://localhost:8080/api/authenticate";
+  private _url: string = 'http://localhost:8080/api/authenticate';
 
   constructor(private _http: HttpClient) {}
 

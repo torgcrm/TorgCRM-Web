@@ -1,20 +1,20 @@
-import {NgModule} from "@angular/core";
-import {CRMLoginComponent} from "./login.component";
-import {FormsModule} from "@angular/forms";
-import {NbCheckboxModule} from "@nebular/theme";
-import {CRMLoginService} from "../../services/login.service";
+import {NgModule} from '@angular/core';
+import {CRMLoginComponent} from './login.component';
+import {FormsModule} from '@angular/forms';
+import {NbCheckboxModule} from '@nebular/theme';
+import {CRMLoginService} from '../../services/login.service';
 
 @NgModule({
   imports: [
     FormsModule,
-    NbCheckboxModule
+    NbCheckboxModule,
   ],
   declarations: [
     CRMLoginComponent,
   ],
   providers: [
     CRMLoginService,
-  ]
+  ],
 })
 export class CRMLoginModule {
 }

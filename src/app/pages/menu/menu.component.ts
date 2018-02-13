@@ -1,13 +1,15 @@
-import {Component, OnInit} from "@angular/core";
-import {LocalDataSource} from "ng2-smart-table";
-import {CRMMenuService} from "../../services/menu.service";
-import {Menu} from "../../domain/Menu";
-import {Router} from "@angular/router";
-import {CRMObjectList} from "../../@torgcrm/components/CRMObjectList";
+import {Component, OnInit} from '@angular/core';
+import {LocalDataSource} from 'ng2-smart-table';
+import {CRMMenuService} from '../../services/menu.service';
+import {Menu} from '../../domain/Menu';
+import {Router} from '@angular/router';
+import {CRMObjectList} from '../../@torgcrm/components/CRMObjectList';
 
 @Component({
   templateUrl: 'menu.component.html',
-  styleUrls: ['menu.component.scss'],
+  styleUrls: [
+    'menu.component.scss',
+  ],
 })
 export class CRMMenuComponent implements OnInit, CRMObjectList {
   dataSource: LocalDataSource = new LocalDataSource();
@@ -30,7 +32,7 @@ export class CRMMenuComponent implements OnInit, CRMObjectList {
     },
     actions: {
       position: 'right',
-      columnTitle: 'Actions'
+      columnTitle: 'Actions',
     },
     columns: {
       title: {
@@ -40,7 +42,7 @@ export class CRMMenuComponent implements OnInit, CRMObjectList {
       code: {
         title: 'Code',
         type: 'string',
-      }
+      },
     },
   };
 

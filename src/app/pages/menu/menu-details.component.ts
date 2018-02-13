@@ -1,12 +1,14 @@
-import {Component, OnInit} from "@angular/core";
-import {Menu} from "../../domain/Menu";
-import {ActivatedRoute, Router} from "@angular/router";
-import {CRMFormDetails} from "../../@torgcrm/components/CRMFormDetails";
-import {CRMMenuService} from "../../services/menu.service";
+import {Component, OnInit} from '@angular/core';
+import {Menu} from '../../domain/Menu';
+import {ActivatedRoute, Router} from '@angular/router';
+import {CRMFormDetails} from '../../@torgcrm/components/CRMFormDetails';
+import {CRMMenuService} from '../../services/menu.service';
 
 @Component({
   templateUrl: 'menu-details.component.html',
-  styleUrls: ['menu-details.component.scss']
+  styleUrls: [
+    'menu-details.component.scss',
+  ],
 })
 export class CRMMenuDetailsComponent implements OnInit, CRMFormDetails {
   objectId: any;
@@ -22,7 +24,7 @@ export class CRMMenuDetailsComponent implements OnInit, CRMFormDetails {
   }
 
   onSubmit(form): void {
-    this.objectId = this.activatedRoute.snapshot.paramMap.get("id");
+    this.objectId = this.activatedRoute.snapshot.paramMap.get('id');
     if (this.objectId) {
       this.menuService.update(form).subscribe(data => {
         this.navigateToList();
@@ -40,7 +42,7 @@ export class CRMMenuDetailsComponent implements OnInit, CRMFormDetails {
   }
 
   ngOnInit() {
-    this.objectId = this.activatedRoute.snapshot.paramMap.get("id");
+    this.objectId = this.activatedRoute.snapshot.paramMap.get('id');
     if (this.objectId) {
       this.menuService.getById(this.objectId).subscribe((data: Menu) => {
         this.object = data;

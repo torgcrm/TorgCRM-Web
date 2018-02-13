@@ -1,4 +1,4 @@
-import {LocalDataSource} from "ng2-smart-table";
+import {LocalDataSource} from 'ng2-smart-table';
 
 export declare class CRMObjectList {
   dataSource: LocalDataSource;

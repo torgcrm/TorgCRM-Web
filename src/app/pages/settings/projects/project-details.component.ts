@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core'
-import {CRMProjectsService} from "../../../services/projects.service";
-import {ActivatedRoute, Router} from "@angular/router";
-import {Project} from "../../../domain/Project";
-import {CRMFormDetails} from "../../../@torgcrm/components/CRMFormDetails";
+import {CRMProjectsService} from '../../../services/projects.service';
+import {ActivatedRoute, Router} from '@angular/router';
+import {Project} from '../../../domain/Project';
+import {CRMFormDetails} from '../../../@torgcrm/components/CRMFormDetails';
 
 @Component({
   selector: 'crm-project-details',
@@ -19,7 +19,7 @@ export class CRMProjectDetailsComponent implements OnInit, CRMFormDetails {
   }
 
   onSubmit(form): void {
-    this.objectId = this.activatedRoute.snapshot.paramMap.get("id");
+    this.objectId = this.activatedRoute.snapshot.paramMap.get('id');
     if (this.objectId) {
       this.projectService.update(form).subscribe(data => {
         this.navigateToList();
@@ -40,7 +40,7 @@ export class CRMProjectDetailsComponent implements OnInit, CRMFormDetails {
   }
 
   ngOnInit(): void {
-    this.objectId = this.activatedRoute.snapshot.paramMap.get("id");
+    this.objectId = this.activatedRoute.snapshot.paramMap.get('id');
     if (this.objectId) {
       this.projectService.getById(this.objectId).subscribe((data: Project) => {
         this.object = data;

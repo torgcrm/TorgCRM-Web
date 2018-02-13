@@ -1,13 +1,12 @@
 import {Component, OnInit} from '@angular/core'
-import {CRMProjectsService} from "../../../services/projects.service";
-import {LocalDataSource} from "ng2-smart-table";
-import {Router} from "@angular/router";
-import {Project} from "../../../domain/Project";
-import {CRMObjectList} from "../../../@torgcrm/components/CRMObjectList";
+import {CRMProjectsService} from '../../../services/projects.service';
+import {LocalDataSource} from 'ng2-smart-table';
+import {Router} from '@angular/router';
+import {Project} from '../../../domain/Project';
+import {CRMObjectList} from '../../../@torgcrm/components/CRMObjectList';
 
 @Component({
-  selector: 'crm-projects',
-  templateUrl: './projects.component.html',
+  templateUrl: 'projects.component.html',
 })
 export class CRMProjectsComponent implements OnInit, CRMObjectList {
   dataSource: LocalDataSource = new LocalDataSource();
@@ -30,7 +29,7 @@ export class CRMProjectsComponent implements OnInit, CRMObjectList {
     },
     actions: {
       position: 'right',
-      columnTitle: 'Actions'
+      columnTitle: 'Actions',
     },
     columns: {
       domain: {
@@ -40,7 +39,7 @@ export class CRMProjectsComponent implements OnInit, CRMObjectList {
       template: {
         title: 'Template',
         type: 'string',
-      }
+      },
     },
   };
 

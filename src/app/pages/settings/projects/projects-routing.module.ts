@@ -1,8 +1,8 @@
 import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
-import {CRMProjectDetailsComponent} from "./project-details.component";
-import {PagesComponent} from "../../pages.component";
-import {CRMProjectsComponent} from "./projects.component";
+import {CRMProjectDetailsComponent} from './project-details.component';
+import {PagesComponent} from '../../pages.component';
+import {CRMProjectsComponent} from './projects.component';
 
 const projectRoutes: Routes = [{
   path: '',

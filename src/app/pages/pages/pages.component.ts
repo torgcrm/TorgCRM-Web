@@ -1,13 +1,15 @@
-import {CRMObjectList} from "../../@torgcrm/components/CRMObjectList";
-import {LocalDataSource} from "ng2-smart-table";
-import {Component, OnInit} from "@angular/core";
-import {Router} from "@angular/router";
-import {News} from "../../domain/News";
-import {CRMPagesService} from "../../services/pages.service";
+import {CRMObjectList} from '../../@torgcrm/components/CRMObjectList';
+import {LocalDataSource} from 'ng2-smart-table';
+import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
+import {News} from '../../domain/News';
+import {CRMPagesService} from '../../services/pages.service';
 
 @Component({
-  templateUrl: "pages.component.html",
-  styleUrls: ["pages.component.scss"],
+  templateUrl: 'pages.component.html',
+  styleUrls: [
+    'pages.component.scss',
+  ],
 })
 export class CRMPagesComponent implements CRMObjectList, OnInit {
   dataSource: LocalDataSource = new LocalDataSource();
@@ -30,7 +32,7 @@ export class CRMPagesComponent implements CRMObjectList, OnInit {
     },
     actions: {
       position: 'right',
-      columnTitle: 'Actions'
+      columnTitle: 'Actions',
     },
     columns: {
       title: {
@@ -40,7 +42,7 @@ export class CRMPagesComponent implements CRMObjectList, OnInit {
       description: {
         title: 'Description',
         type: 'string',
-      }
+      },
     },
   };
 
