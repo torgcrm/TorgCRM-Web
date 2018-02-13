@@ -5,7 +5,7 @@ import {CRMProjectsComponent} from './projects.component';
 import {Ng2SmartTableModule} from 'ng2-smart-table';
 import {CRMProjectDetailsComponent} from "./project-details.component";
 import {FormsModule} from "@angular/forms";
-import {CRMProjectsService} from "../../../services/projects.services";
+import {CRMProjectsService} from "../../../services/projects.service";
 
 @NgModule({
   imports: [

@@ -1,6 +1,6 @@
 import {Component, OnInit} from "@angular/core";
 import {LocalDataSource} from "ng2-smart-table";
-import {CRMMenuService} from "../../services/menu.services";
+import {CRMMenuService} from "../../services/menu.service";
 import {Menu} from "../../domain/Menu";
 import {Router} from "@angular/router";
 import {CRMObjectList} from "../../@torgcrm/components/CRMObjectList";

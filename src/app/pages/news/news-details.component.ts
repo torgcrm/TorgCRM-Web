@@ -1,20 +1,22 @@
 import {Component, OnInit} from "@angular/core";
-import {Menu} from "../../domain/Menu";
 import {ActivatedRoute, Router} from "@angular/router";
 import {CRMFormDetails} from "../../@torgcrm/components/CRMFormDetails";
-import {CRMMenuService} from "../../services/menu.service";
+import {CRMNewsService} from "../../services/news.service";
+import {News} from "../../domain/News";
+import "../loaders/ckeditor.loader"
+import 'ckeditor';
 
 @Component({
-  templateUrl: 'menu-details.component.html',
-  styleUrls: ['menu-details.component.scss']
+  templateUrl: 'news-details.component.html',
+  styleUrls: ['news-details.component.scss']
 })
-export class CRMMenuDetailsComponent implements OnInit, CRMFormDetails {
+export class CRMNewsDetailsComponent implements OnInit, CRMFormDetails {
   objectId: any;
-  object: Menu = new Menu();
+  object: News = new News();
 
   constructor(private router: Router,
               private activatedRoute: ActivatedRoute,
-              private menuService: CRMMenuService) {
+              private service: CRMNewsService) {
   }
 
   onCancel(event): void {
@@ -24,11 +26,11 @@ export class CRMMenuDetailsComponent implements OnInit, CRMFormDetails {
   onSubmit(form): void {
     this.objectId = this.activatedRoute.snapshot.paramMap.get("id");
     if (this.objectId) {
-      this.menuService.update(form).subscribe(data => {
+      this.service.update(form).subscribe(data => {
         this.navigateToList();
       });
     } else {
-      this.menuService.create(form).subscribe(data => {
+      this.service.create(form).subscribe(data => {
         this.navigateToList();
       })
     }
@@ -36,13 +38,13 @@ export class CRMMenuDetailsComponent implements OnInit, CRMFormDetails {
   }
 
   navigateToList(): void {
-    this.router.navigate(['pages/menu']);
+    this.router.navigate(['pages/news']);
   }
 
   ngOnInit() {
     this.objectId = this.activatedRoute.snapshot.paramMap.get("id");
     if (this.objectId) {
-      this.menuService.getById(this.objectId).subscribe((data: Menu) => {
+      this.service.getById(this.objectId).subscribe((data: News) => {
         this.object = data;
       });
     }

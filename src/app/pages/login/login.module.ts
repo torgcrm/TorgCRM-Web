@@ -2,7 +2,7 @@ import {NgModule} from "@angular/core";
 import {CRMLoginComponent} from "./login.component";
 import {FormsModule} from "@angular/forms";
 import {NbCheckboxModule} from "@nebular/theme";
-import {CRMLoginService} from "../../services/login.services";
+import {CRMLoginService} from "../../services/login.service";
 
 @NgModule({
   imports: [

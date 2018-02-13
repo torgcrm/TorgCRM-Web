@@ -1,15 +1,15 @@
-import {Component, OnInit} from '@angular/core'
-import {CRMProjectsService} from "../../../services/projects.service";
+import {CRMObjectList} from "../../@torgcrm/components/CRMObjectList";
 import {LocalDataSource} from "ng2-smart-table";
+import {Component, OnInit} from "@angular/core";
+import {CRMNewsService} from "../../services/news.service";
 import {Router} from "@angular/router";
-import {Project} from "../../../domain/Project";
-import {CRMObjectList} from "../../../@torgcrm/components/CRMObjectList";
+import {News} from "../../domain/News";
 
 @Component({
-  selector: 'crm-projects',
-  templateUrl: './projects.component.html',
+  templateUrl: "news.component.html",
+  styleUrls: ["news.component.scss"],
 })
-export class CRMProjectsComponent implements OnInit, CRMObjectList {
+export class CRMNewsComponent implements CRMObjectList, OnInit {
   dataSource: LocalDataSource = new LocalDataSource();
   settings = {
     mode: 'external',
@@ -33,39 +33,39 @@ export class CRMProjectsComponent implements OnInit, CRMObjectList {
       columnTitle: 'Actions'
     },
     columns: {
-      domain: {
-        title: 'Domain',
+      title: {
+        title: 'Title',
         type: 'string',
       },
-      template: {
-        title: 'Template',
+      description: {
+        title: 'Description',
         type: 'string',
       }
     },
   };
 
-  constructor(private projectService: CRMProjectsService,
-              private router: Router) {
-    this.projectService = projectService;
+  constructor(private service: CRMNewsService,
+              private router: Router) {}
+
+  ngOnInit() {
+    this.service.getAll().subscribe((data: Array<News>) => {
+      this.dataSource.load(data);
+    })
   }
 
   onDelete(event): void {
-    this.projectService.delete(event.data.id).subscribe(data => {
+    this.service.delete(event.data.id).subscribe(data => {
       this.dataSource.remove(event.data);
     });
   }
 
   onEdit(event): void {
     const id = event.data.id;
-    this.router.navigate(['pages/settings/projects/details', id])
+    this.router.navigate(['pages/news/details', id])
   }
 
   onCreate(event): void {
-    this.router.navigate(['pages/settings/projects/new']);
-  }
-
-  ngOnInit(): void {
-    this.projectService.getAll().subscribe((data: Array<Project>) => this.dataSource.load(data));
+    this.router.navigate(['pages/news/new']);
   }
 
 }

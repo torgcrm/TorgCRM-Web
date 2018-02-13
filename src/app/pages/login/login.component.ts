@@ -1,6 +1,6 @@
 import {Component} from "@angular/core";
 import {User} from "../../domain/User";
-import {CRMLoginService} from "../../services/login.services";
+import {CRMLoginService} from "../../services/login.service";
 import {Router} from "@angular/router";
 
 @Component({

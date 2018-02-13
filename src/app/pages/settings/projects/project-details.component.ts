@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core'
-import {CRMProjectsService} from "../../../services/projects.services";
+import {CRMProjectsService} from "../../../services/projects.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {Project} from "../../../domain/Project";
 import {CRMFormDetails} from "../../../@torgcrm/components/CRMFormDetails";
