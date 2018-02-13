@@ -13,18 +13,28 @@ export const MENU_ITEMS: NbMenuItem[] = [
     link: '/pages/orders',
   },
   {
+    title: 'Customers',
+    icon: 'nb-person',
+    link: '/pages/customers',
+  },
+  {
     title: 'Catalog',
     icon: 'nb-grid-b-outline',
     children: [
       {
-        title: 'Category',
-        link: '/pages/catalog/category',
-        icon: 'nb-grid-a-outline',
+        title: 'Main page',
+        link: '/pages/catalog/main-page',
+        icon: 'nb-keypad',
       },
       {
         title: 'Items',
         link: '/pages/catalog/items',
         icon: 'nb-keypad',
+      },
+      {
+        title: 'Category',
+        link: '/pages/catalog/category',
+        icon: 'nb-grid-a-outline',
       },
     ],
   },
@@ -44,6 +54,17 @@ export const MENU_ITEMS: NbMenuItem[] = [
     link: '/pages/news',
   },
   {
+    title: 'Reports',
+    icon: 'nb-bar-chart',
+    children : [
+      {
+        title: 'Projects',
+        link: '/pages/settings/projects',
+        icon: 'ion-clipboard',
+      },
+    ],
+  },
+  {
     title: 'Settings',
     icon: 'nb-gear',
     children : [
@@ -54,26 +75,26 @@ export const MENU_ITEMS: NbMenuItem[] = [
       },
     ],
   },
-  {
-    title: 'Auth',
-    icon: 'nb-locked',
-    children: [
-      {
-        title: 'Login',
-        link: '/auth/login',
-      },
-      {
-        title: 'Register',
-        link: '/auth/register',
-      },
-      {
-        title: 'Request Password',
-        link: '/auth/request-password',
-      },
-      {
-        title: 'Reset Password',
-        link: '/auth/reset-password',
-      },
-    ],
-  },
+  // {
+  //   title: 'Auth',
+  //   icon: 'nb-locked',
+  //   children: [
+  //     {
+  //       title: 'Login',
+  //       link: '/auth/login',
+  //     },
+  //     {
+  //       title: 'Register',
+  //       link: '/auth/register',
+  //     },
+  //     {
+  //       title: 'Request Password',
+  //       link: '/auth/request-password',
+  //     },
+  //     {
+  //       title: 'Reset Password',
+  //       link: '/auth/reset-password',
+  //     },
+  //   ],
+  // },
 ];
