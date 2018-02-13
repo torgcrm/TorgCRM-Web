@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
   template: `
     <nb-layout>
       <nb-layout-header fixed>
-        <ngx-header></ngx-header>
+        <crm-header></crm-header>
       </nb-layout-header>
 
       <nb-sidebar class="menu-sidebar" tag="menu-sidebar" responsive>

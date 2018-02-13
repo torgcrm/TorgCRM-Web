@@ -58,9 +58,24 @@ export const MENU_ITEMS: NbMenuItem[] = [
     icon: 'nb-bar-chart',
     children : [
       {
-        title: 'Projects',
-        link: '/pages/settings/projects',
-        icon: 'ion-clipboard',
+        title: 'Sales',
+        link: '/pages/reports/sales',
+        icon: 'nb-bar-chart',
+      },
+      {
+        title: 'Top customers',
+        link: '/pages/reports/top-customers',
+        icon: 'nb-bar-chart',
+      },
+      {
+        title: 'Geo report',
+        link: '/pages/reports/top-customers',
+        icon: 'nb-bar-chart',
+      },
+      {
+        title: 'Ad reports',
+        link: '/pages/reports/top-customers',
+        icon: 'nb-bar-chart',
       },
     ],
   },
