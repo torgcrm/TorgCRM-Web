@@ -6,6 +6,7 @@ import {DashboardComponent} from './dashboard/dashboard.component';
 import {CRMSettingsRoutingModule} from "./settings/settings-routing.module";
 import {CRMMenuRoutingModule} from "./menu/menu-routing.module";
 import {CRMNewsRoutingModule} from "./news/news-routing.module";
+import {CRMPagesRoutingModule} from "./pages/pages-routing.module";
 
 const routes: Routes = [{
   path: '',
@@ -24,6 +25,7 @@ const routes: Routes = [{
     CRMSettingsRoutingModule,
     CRMMenuRoutingModule,
     CRMNewsRoutingModule,
+    CRMPagesRoutingModule,
   ],
   exports: [RouterModule],
 })

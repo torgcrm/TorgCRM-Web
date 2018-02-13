@@ -11,6 +11,7 @@ import {JwtInterceptor} from "../interceptors/JwtInterceptor";
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {CRMNewsModule} from "./news/news.module";
 import {CKEditorModule} from "ng2-ckeditor";
+import {CRMPagesModule} from "./pages/pages.module";
 
 const PAGES_COMPONENTS = [
   PagesComponent,
@@ -26,6 +27,7 @@ const PAGES_COMPONENTS = [
     CRMMenuModule,
     CRMLoginModule,
     CRMNewsModule,
+    CRMPagesModule,
   ],
   declarations: [
     ...PAGES_COMPONENTS,
