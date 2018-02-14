@@ -3,7 +3,7 @@ import {LocalDataSource} from 'ng2-smart-table';
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {News} from '../../../domain/News';
-import {CRMItemService} from "../../../services/item.service";
+import {CRMItemService} from '../../../services/item.service';
 
 @Component({
   templateUrl: 'items.component.html',

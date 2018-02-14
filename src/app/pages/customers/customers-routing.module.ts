@@ -1,8 +1,8 @@
 import {RouterModule, Routes} from '@angular/router';
 import {PagesComponent} from '../pages.component';
 import {NgModule} from '@angular/core';
-import {CRMCustomersComponent} from "./customers.component";
-import {CRMCustomersDetailsComponent} from "./customers-details.component";
+import {CRMCustomersComponent} from './customers.component';
+import {CRMCustomersDetailsComponent} from './customers-details.component';
 
 const routes: Routes = [{
   path: '',

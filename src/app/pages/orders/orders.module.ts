@@ -4,7 +4,7 @@ import {ThemeModule} from '../../@theme/theme.module';
 import {CRMOrdersComponent} from './orders.component';
 import {CRMOrdersDetailsComponent} from './orders-details.component';
 import {CKEditorModule} from 'ng2-ckeditor';
-import {CRMOrdersService} from "../../services/orders.service";
+import {CRMOrdersService} from '../../services/orders.service';
 
 @NgModule({
   imports: [

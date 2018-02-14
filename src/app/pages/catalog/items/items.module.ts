@@ -4,7 +4,7 @@ import {ThemeModule} from '../../../@theme/theme.module';
 import {CKEditorModule} from 'ng2-ckeditor';
 import {CRMItemsComponent} from './items.component';
 import {CRMItemsDetailsComponent} from './items-details.component';
-import {CRMItemService} from "../../../services/item.service";
+import {CRMItemService} from '../../../services/item.service';
 
 @NgModule({
   imports: [

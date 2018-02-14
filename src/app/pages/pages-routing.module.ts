@@ -8,9 +8,9 @@ import {CRMMenuRoutingModule} from './menu/menu-routing.module';
 import {CRMNewsRoutingModule} from './news/news-routing.module';
 import {CRMPagesRoutingModule} from './pages/pages-routing.module';
 import {CRMCategoriesRoutingModule} from './catalog/categories/categories-routing.module';
-import {CRMItemsRoutingModule} from "./catalog/items/items-routing.module";
-import {CRMCustomersRoutingModule} from "./customers/customers-routing.module";
-import {CRMOrdersRoutingModule} from "./orders/orders-routing.module";
+import {CRMItemsRoutingModule} from './catalog/items/items-routing.module';
+import {CRMCustomersRoutingModule} from './customers/customers-routing.module';
+import {CRMOrdersRoutingModule} from './orders/orders-routing.module';
 
 const routes: Routes = [{
   path: '',

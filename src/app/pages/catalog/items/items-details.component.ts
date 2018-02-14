@@ -5,7 +5,7 @@ import {News} from '../../../domain/News';
 import '../../loaders/ckeditor.loader'
 import 'ckeditor';
 import {Category} from '../../../domain/Category';
-import {CRMItemService} from "../../../services/item.service";
+import {CRMItemService} from '../../../services/item.service';
 
 @Component({
   templateUrl: 'items-details.component.html',

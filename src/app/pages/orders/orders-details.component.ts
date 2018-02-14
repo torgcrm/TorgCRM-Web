@@ -4,7 +4,7 @@ import {CRMFormDetails} from '../../@torgcrm/components/CRMFormDetails';
 import {News} from '../../domain/News';
 import '../loaders/ckeditor.loader'
 import 'ckeditor';
-import {CRMOrdersService} from "../../services/orders.service";
+import {CRMOrdersService} from '../../services/orders.service';
 
 @Component({
   templateUrl: 'orders-details.component.html',

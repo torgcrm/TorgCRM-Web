@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {CRMLoginService} from '../../services/login.service';
 import {Router} from '@angular/router';
-import {User} from "../../domain/User";
+import {User} from '../../domain/User';
 
 @Component({
   templateUrl: 'login.component.html',

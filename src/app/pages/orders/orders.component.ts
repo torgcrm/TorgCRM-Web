@@ -3,7 +3,7 @@ import {LocalDataSource} from 'ng2-smart-table';
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {News} from '../../domain/News';
-import {CRMOrdersService} from "../../services/orders.service";
+import {CRMOrdersService} from '../../services/orders.service';
 
 @Component({
   templateUrl: 'orders.component.html',
