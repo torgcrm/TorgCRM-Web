@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {CRMFormDetails} from '../../../@torgcrm/components/CRMFormDetails';
 import {News} from '../../../domain/News';
-import '../loaders/ckeditor.loader'
+import '../../loaders/ckeditor.loader'
 import 'ckeditor';
 import {Category} from '../../../domain/Category';
 import {CRMCategoryService} from '../../../services/category.service';

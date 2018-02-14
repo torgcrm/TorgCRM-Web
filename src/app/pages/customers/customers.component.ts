@@ -1,17 +1,17 @@
-import {CRMObjectList} from '../../../@torgcrm/components/CRMObjectList';
+import {CRMObjectList} from '../../@torgcrm/components/CRMObjectList';
 import {LocalDataSource} from 'ng2-smart-table';
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
-import {News} from '../../../domain/News';
-import {CRMItemService} from "../../../services/item.service";
+import {News} from '../../domain/News';
+import {CRMCustomerService} from "../../services/customer.service";
 
 @Component({
-  templateUrl: 'items.component.html',
+  templateUrl: 'customers.component.html',
   styleUrls: [
-    'items.component.scss',
+    'customers.component.scss',
   ],
 })
-export class CRMItemsComponent implements CRMObjectList, OnInit {
+export class CRMCustomersComponent implements CRMObjectList, OnInit {
   dataSource: LocalDataSource = new LocalDataSource();
   settings = {
     mode: 'external',
@@ -36,19 +36,18 @@ export class CRMItemsComponent implements CRMObjectList, OnInit {
     },
     columns: {
       title: {
-        title: 'Category name',
+        title: 'Title',
         type: 'string',
       },
-      slug: {
-        title: 'Code',
+      description: {
+        title: 'Description',
         type: 'string',
       },
     },
   };
 
-  constructor(private service: CRMItemService,
-              private router: Router) {
-  }
+  constructor(private service: CRMCustomerService,
+              private router: Router) {}
 
   ngOnInit() {
     this.service.getAll().subscribe((data: Array<News>) => {
@@ -64,11 +63,11 @@ export class CRMItemsComponent implements CRMObjectList, OnInit {
 
   onEdit(event): void {
     const id = event.data.id;
-    this.router.navigate(['pages/catalog/items/details', id])
+    this.router.navigate(['pages/news/details', id])
   }
 
   onCreate(event): void {
-    this.router.navigate(['pages/catalog/items/new']);
+    this.router.navigate(['pages/news/new']);
   }
 
 }

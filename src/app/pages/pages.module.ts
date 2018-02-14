@@ -12,6 +12,9 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {CRMNewsModule} from './news/news.module';
 import {CRMPagesModule} from './pages/pages.module';
 import {CRMCategoriesModule} from './catalog/categories/categories.module';
+import {CRMItemsModule} from "./catalog/items/items.module";
+import {CRMCustomersModule} from "./customers/customers.module";
+import {CRMOrdersModule} from "./orders/orders.module";
 
 const PAGES_COMPONENTS = [
   PagesComponent,
@@ -29,6 +32,9 @@ const PAGES_COMPONENTS = [
     CRMNewsModule,
     CRMPagesModule,
     CRMCategoriesModule,
+    CRMItemsModule,
+    CRMCustomersModule,
+    CRMOrdersModule,
   ],
   declarations: [
     ...PAGES_COMPONENTS,
