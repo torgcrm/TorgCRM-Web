@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {CRMFormDetails} from '../../../@torgcrm/components/CRMFormDetails';
-import {News} from '../../../domain/News';
 import '../../loaders/ckeditor.loader'
 import 'ckeditor';
 import {Category} from '../../../domain/Category';
@@ -45,7 +44,7 @@ export class CRMCategoriesDetailsComponent implements OnInit, CRMFormDetails {
   ngOnInit() {
     this.objectId = this.activatedRoute.snapshot.paramMap.get('id');
     if (this.objectId) {
-      this.service.getById(this.objectId).subscribe((data: News) => {
+      this.service.getById(this.objectId).subscribe((data: Category) => {
         this.object = data;
       });
     }

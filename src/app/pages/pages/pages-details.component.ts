@@ -5,6 +5,7 @@ import {News} from '../../domain/News';
 import '../loaders/ckeditor.loader'
 import 'ckeditor';
 import {CRMPagesService} from '../../services/pages.service';
+import {Page} from '../../domain/Page';
 
 @Component({
   templateUrl: 'pages-details.component.html',
@@ -12,7 +13,7 @@ import {CRMPagesService} from '../../services/pages.service';
 })
 export class CRMPagesDetailsComponent implements OnInit, CRMFormDetails {
   objectId: any;
-  object: News = new News();
+  object: Page = new Page();
 
   constructor(private router: Router,
               private activatedRoute: ActivatedRoute,
@@ -44,7 +45,7 @@ export class CRMPagesDetailsComponent implements OnInit, CRMFormDetails {
   ngOnInit() {
     this.objectId = this.activatedRoute.snapshot.paramMap.get('id');
     if (this.objectId) {
-      this.service.getById(this.objectId).subscribe((data: News) => {
+      this.service.getById(this.objectId).subscribe((data: Page) => {
         this.object = data;
       });
     }

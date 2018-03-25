@@ -1,7 +1,6 @@
-export class Item {
+export class Page {
   id: number;
   title: string;
   description: string;
   slug: string;
-  price: number;
 }

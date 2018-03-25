@@ -1,10 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {CRMFormDetails} from '../../@torgcrm/components/CRMFormDetails';
-import {News} from '../../domain/News';
 import '../loaders/ckeditor.loader'
 import 'ckeditor';
 import {CRMOrdersService} from '../../services/orders.service';
+import {Order} from '../../domain/Order';
 
 @Component({
   templateUrl: 'orders-details.component.html',
@@ -14,7 +14,7 @@ import {CRMOrdersService} from '../../services/orders.service';
 })
 export class CRMOrdersDetailsComponent implements OnInit, CRMFormDetails {
   objectId: any;
-  object: News = new News();
+  object: Order = new Order();
 
   constructor(private router: Router,
               private activatedRoute: ActivatedRoute,
@@ -46,7 +46,7 @@ export class CRMOrdersDetailsComponent implements OnInit, CRMFormDetails {
   ngOnInit() {
     this.objectId = this.activatedRoute.snapshot.paramMap.get('id');
     if (this.objectId) {
-      this.service.getById(this.objectId).subscribe((data: News) => {
+      this.service.getById(this.objectId).subscribe((data: Order) => {
         this.object = data;
       });
     }

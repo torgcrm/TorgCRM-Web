@@ -5,6 +5,7 @@ import {News} from '../../domain/News';
 import '../loaders/ckeditor.loader'
 import 'ckeditor';
 import {CRMCustomerService} from '../../services/customer.service';
+import {Customer} from '../../domain/Customer';
 
 @Component({
   templateUrl: 'customers-details.component.html',
@@ -14,7 +15,7 @@ import {CRMCustomerService} from '../../services/customer.service';
 })
 export class CRMCustomersDetailsComponent implements OnInit, CRMFormDetails {
   objectId: any;
-  object: News = new News();
+  object: Customer = new Customer();
 
   constructor(private router: Router,
               private activatedRoute: ActivatedRoute,
@@ -46,7 +47,7 @@ export class CRMCustomersDetailsComponent implements OnInit, CRMFormDetails {
   ngOnInit() {
     this.objectId = this.activatedRoute.snapshot.paramMap.get('id');
     if (this.objectId) {
-      this.service.getById(this.objectId).subscribe((data: News) => {
+      this.service.getById(this.objectId).subscribe((data: Customer) => {
         this.object = data;
       });
     }

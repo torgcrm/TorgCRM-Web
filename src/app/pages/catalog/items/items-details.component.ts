@@ -4,8 +4,8 @@ import {CRMFormDetails} from '../../../@torgcrm/components/CRMFormDetails';
 import {News} from '../../../domain/News';
 import '../../loaders/ckeditor.loader'
 import 'ckeditor';
-import {Category} from '../../../domain/Category';
 import {CRMItemService} from '../../../services/item.service';
+import {Item} from '../../../domain/Item';
 
 @Component({
   templateUrl: 'items-details.component.html',
@@ -13,7 +13,7 @@ import {CRMItemService} from '../../../services/item.service';
 })
 export class CRMItemsDetailsComponent implements OnInit, CRMFormDetails {
   objectId: any;
-  object: Category = new Category();
+  object: Item = new Item();
 
   constructor(private router: Router,
               private activatedRoute: ActivatedRoute,
@@ -45,7 +45,7 @@ export class CRMItemsDetailsComponent implements OnInit, CRMFormDetails {
   ngOnInit() {
     this.objectId = this.activatedRoute.snapshot.paramMap.get('id');
     if (this.objectId) {
-      this.service.getById(this.objectId).subscribe((data: News) => {
+      this.service.getById(this.objectId).subscribe((data: Item) => {
         this.object = data;
       });
     }
